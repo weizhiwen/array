@@ -22,6 +22,7 @@ int main()
 	printf("\n");
 
 	TSMatrix Q;
+	printf("矩阵相加之和为：\n");
 	AddTSMatrix(M, N, Q);
 	PrintTSMatrix(Q);
 

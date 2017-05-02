@@ -77,10 +77,13 @@ int AddTSMatrix(TSMatrix M, TSMatrix N, TSMatrix &Q)
 			if (M.data[n1].x == row && N.data[n2].x == row && M.data[n1].y == col && col == N.data[n2].y)
 			{
 					num++;
-					Q.data[num].x = M.data[n1].x;
-					Q.data[num].y = M.data[n1].y;
 					Q.data[num].values = M.data[n1].values + N.data[n2].values;
-					Q.nonZeroNumber++;
+					if (Q.data[num].values != 0)
+					{
+						Q.data[num].x = M.data[n1].x;
+						Q.data[num].y = M.data[n1].y;
+						Q.nonZeroNumber++;
+					}
 					n1++;
 					n2++;
 			}
